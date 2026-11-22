@@ -80,3 +80,5 @@ The imprint and privacy texts are templates. Have them reviewed for the jurisdic
 ## Responsiveness
 
 Tested with Playwright on 320 px phones, iPhone SE, iPhone 13 (portrait and landscape), Pixel 7, iPad Mini, iPad Pro 11 (landscape), 1280, 1920 and 2560 px screens: no horizontal overflow, no clipped elements, no failed requests. Content is centred at a maximum width of 1440 px on wide screens, hover effects are disabled on touch devices, and safe-area insets are respected on notched phones.
+
+Spacing follows shared tokens in `styles.css`: `--gutter` for page margins (16 px on phones, centred at 1440 px on wide screens), `--pad-card` for cells, panels and forms (20 to 32 px), and `--pad-card-lg` for service, founder and case cards (24 to 40 px). Touch targets are at least 44 px on touch screens. A Playwright audit confirms on all ten device profiles that every section aligns to the gutter, no text sits within 12 px of the screen edge, and no tap target is smaller than 40 px.
