@@ -295,6 +295,8 @@ p:last-child { margin-bottom: 0; }
 .service-list-value li::before { content: "+"; }
 .services-grid.has-wide .service-card { border-bottom: var(--bw) solid var(--line); }
 .services-grid.has-wide .service-card-wide { grid-column: 1 / -1; border-right: 0; border-bottom: 0; }
+.services-grid.has-wide .service-card-wide:not(:last-child) { border-bottom: var(--bw) solid var(--line); }
+.service-req { display: inline-block; margin: 0 0 .9rem; padding: .3rem .75rem; border: var(--bw) solid currentColor; border-radius: var(--radius-pill); text-transform: none; letter-spacing: 0; font-size: .75rem; }
 .service-wide-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr); gap: clamp(1.5rem, 4vw, 3.5rem); }
 .service-wide-main > p { color: var(--ink-2); }
 .service-wide-side h4:first-child { margin-top: 0; }
@@ -330,11 +332,11 @@ p:last-child { margin-bottom: 0; }
 .ohc-levels table { width: 100%; border-collapse: collapse; }
 .ohc-levels th, .ohc-levels td { text-align: left; padding: .9rem .75rem .9rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 .ohc-levels th { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); }
-.ohc-levels td:first-child { width: 10rem; white-space: nowrap; }
+.ohc-levels td:first-child { width: 13rem; white-space: nowrap; }
 .ohc-levels tr:last-child td { border-bottom: 0; padding-bottom: 0; }
 .pill { display: inline-block; padding: .3rem .8rem; border: var(--bw) solid var(--line); border-radius: var(--radius-pill); font-family: var(--font-display); font-weight: 700; font-size: .9rem; }
 .pill-filled { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-@media (max-width: 600px) { .ohc-domain { grid-template-columns: minmax(0, 1fr); gap: .5rem; } .ohc-levels td:first-child { width: auto; } }
+@media (max-width: 600px) { .ohc-domain { grid-template-columns: minmax(0, 1fr); gap: .5rem; } .ohc-levels thead { display: none; } .ohc-levels table, .ohc-levels tbody, .ohc-levels tr, .ohc-levels td { display: block; width: auto !important; } .ohc-levels tr { padding: .9rem 0; border-bottom: 1px solid var(--line); } .ohc-levels tr:last-child { border-bottom: 0; padding-bottom: 0; } .ohc-levels td { border: 0; padding: 0; } .ohc-levels td:first-child { margin-bottom: .5rem; } }
 
 /* Approach */
 .phases { list-style: none; margin: 0 0 clamp(2rem, 5vw, 4rem); padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: var(--bw) solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg); }
