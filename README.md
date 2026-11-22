@@ -12,11 +12,30 @@ Static website for an urban consulting practice advising municipalities, metropo
 | File | Purpose |
 | --- | --- |
 | `index.html` | Single-page site: hero, mandate, service lines, OHC certification structure, approach, reference frameworks, founders, contact |
-| `styles.css` | Layout, typography, light and dark colour schemes, responsive breakpoints |
-| `script.js` | Mobile navigation, footer year, contact form (mailto fallback) |
+| `styles.css` | Neo-brutalist design system: 2 px rules, hard offset shadows, Space Grotesk display type, IBM Plex Mono labels, single acid accent; light and dark schemes; responsive breakpoints; all CSS animations |
+| `script.js` | Scroll reveal (IntersectionObserver), animated counters, active-section navigation, header hide on scroll, reading progress bar, mobile navigation, contact form (mailto fallback) |
 | `assets/` | Founder photographs |
 
-No build step or dependencies. Fonts are loaded from Google Fonts; everything else is self-contained.
+No build step or dependencies. Fonts are loaded from Google Fonts; everything else is self-contained and runs on any static host, including GitHub Pages.
+
+## Motion
+
+| Element | Behaviour |
+| --- | --- |
+| Hero headline | Line-by-line rise on load |
+| Hero figure | Slow counter-rotating isochrone rings, expanding pulse at the 300 m ring, accent blink on green plots |
+| Marquee strip | Continuous horizontal scroll; pauses on hover |
+| Stat band | Numbers count up when scrolled into view |
+| Sections | Staggered fade-and-rise reveal on scroll |
+| Service cards, phases, standards | Hover colour inversion and hard-shadow lift |
+| Header | Hides on scroll down, returns on scroll up; progress bar across the top |
+| Footer wordmark | Outlined type fills with accent on hover |
+
+All motion is disabled under `prefers-reduced-motion: reduce`; content is fully visible without JavaScript.
+
+## Design tokens
+
+Colours and type are defined once at the top of `styles.css`. To change the accent, edit `--accent` (currently `#d4f24f`). To change the border weight used throughout, edit `--bw`.
 
 ## Local preview
 
