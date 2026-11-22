@@ -62,13 +62,13 @@
   var counters = document.querySelectorAll(".count");
   function animateCount(el) {
     var target = parseFloat(el.getAttribute("data-count"));
-    if (reduceMotion) { el.textContent = String(target); return; }
+    if (reduceMotion) { el.textContent = target.toLocaleString("en-US"); return; }
     var start = null, duration = 1400;
     function step(ts) {
       if (!start) start = ts;
       var p = Math.min(1, (ts - start) / duration);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = String(Math.round(target * eased));
+      el.textContent = Math.round(target * eased).toLocaleString("en-US");
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -81,7 +81,7 @@
     }, { threshold: 0.5 });
     counters.forEach(function (el) { cio.observe(el); });
   } else {
-    counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
+    counters.forEach(function (el) { el.textContent = parseFloat(el.getAttribute("data-count")).toLocaleString("en-US"); });
   }
 
   // Active section highlight in navigation

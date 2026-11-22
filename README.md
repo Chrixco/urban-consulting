@@ -1,11 +1,15 @@
 # Proxima Urban — company website
 
-Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments on:
+Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines:
 
-1. Urban resilience planning
-2. 15-minute city and proximity planning
-3. One Health City certification (OHC)
-4. Green affordance: public green space within 300 m
+1. **One Health City assessment**: proximity, exposure and biodiversity indicators, based on the One Health City framework developed at the Institute of Landscape Architecture, Leibniz Universität Hannover. Includes 15-minute and 300 m green space benchmarks.
+2. **Climate resilience and nature-based solutions planning**: multi-scalar resilience strategy, planning instrument review and nature-based solutions with cost–benefit comparison.
+
+## Page structure
+
+Hero · cost-of-inaction figures · mandate · 01 service lines · 02 value for the city (sourced economic evidence, Copenhagen case, savings mechanisms) · 03 One Health City framework · 04 approach · 05 reference frameworks · 06 founders · 07 why contact us · 08 contact.
+
+All economic and health figures on the page link to their published source. Update them if newer editions are released.
 
 ## Files
 
@@ -57,4 +61,4 @@ Any static host (Netlify, Vercel, Cloudflare Pages) works by pointing it at the 
 - **Founder biographies**: the Team section. Written from the public profiles at ICS-ULisboa and the Institute of Landscape Architecture, Leibniz Universität Hannover; confirm wording with both founders. Photos are in `assets/` (joint photo plus two square crops generated from it); replace with individual portraits if preferred.
 - **Offices and languages**: contact section.
 - **Contact form**: currently composes an email via `mailto:`. Replace the handler in `script.js` with a form service endpoint (Formspree, Netlify Forms, or a municipal-grade alternative) for production use.
-- **One Health City certification**: the five domains and three levels are a proposed structure for the firm's own framework. Review thresholds and verification procedures before publication.
+- **One Health City framework**: the framework and index belong to the Institute of Landscape Architecture, Leibniz Universität Hannover. Confirm commercial use and attribution wording with the institute before launch. The page presents it as an assessment, not a certification.
