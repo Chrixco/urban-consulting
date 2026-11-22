@@ -12,7 +12,7 @@ Static website for an urban consulting practice advising municipalities, metropo
 | File | Purpose |
 | --- | --- |
 | `index.html` | Single-page site: hero, mandate, service lines, OHC certification structure, approach, reference frameworks, founders, contact |
-| `styles.css` | Neo-brutalist design system: 2 px rules, hard offset shadows, Space Grotesk display type, IBM Plex Mono labels, single neon blue accent; light and dark schemes; responsive breakpoints; all CSS animations |
+| `styles.css` | Neo-brutalist design system: 2 px rules, rounded corners (radius scale), hard offset shadows, Space Grotesk display type, IBM Plex Mono labels, single neon blue accent; light and dark schemes; responsive breakpoints; all CSS animations |
 | `script.js` | Scroll reveal (IntersectionObserver), animated counters, active-section navigation, header hide on scroll, reading progress bar, mobile navigation, contact form (mailto fallback) |
 | `assets/` | Founder photographs |
 
@@ -35,7 +35,7 @@ All motion is disabled under `prefers-reduced-motion: reduce`; content is fully 
 
 ## Design tokens
 
-Colours and type are defined once at the top of `styles.css`. To change the accent, edit `--accent` (currently neon blue, `#1f51ff`). To change the border weight used throughout, edit `--bw`.
+Colours and type are defined once at the top of `styles.css`. To change the accent, edit `--accent` (currently neon blue, `#1f51ff`). To change the border weight used throughout, edit `--bw`. Corner rounding is set by `--radius` (panels), `--radius-sm` (buttons, inputs) and `--radius-pill` (labels, badges); set them to `0` to return to square corners.
 
 ## Local preview
 
