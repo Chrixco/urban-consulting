@@ -38,6 +38,30 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  // Floating back-to-top button with scroll-progress ring
+  var fab = document.getElementById("to-top");
+  var ring = document.getElementById("to-top-ring");
+  if (fab) {
+    var C = 2 * Math.PI * 23;
+    if (ring) { ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C; }
+    var fabTick = function () {
+      var y = window.scrollY, max = document.documentElement.scrollHeight - window.innerHeight;
+      var show = y > Math.min(600, window.innerHeight * 0.8);
+      fab.classList.toggle("is-visible", show);
+      fab.tabIndex = show ? 0 : -1;
+      fab.setAttribute("aria-hidden", show ? "false" : "true");
+      if (ring) ring.style.strokeDashoffset = C * (1 - (max > 0 ? Math.min(1, y / max) : 0));
+    };
+    window.addEventListener("scroll", fabTick, { passive: true });
+    window.addEventListener("resize", fabTick);
+    fabTick();
+    fab.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      var brand = document.querySelector(".brand");
+      if (brand) brand.focus({ preventScroll: true });
+    });
+  }
+
   // Scroll reveal
   var revealEls = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && !reduceMotion) {
