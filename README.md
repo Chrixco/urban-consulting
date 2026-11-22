@@ -18,9 +18,13 @@ All economic and health figures on the page link to their published source. Upda
 | `index.html` | Single-page site: hero, mandate, service lines, OHC certification structure, approach, reference frameworks, founders, contact |
 | `styles.css` | Neo-brutalist design system: 2 px rules, rounded corners (radius scale), hard offset shadows, Space Grotesk display type, IBM Plex Mono labels, single neon blue accent; light and dark schemes; responsive breakpoints; all CSS animations |
 | `script.js` | Scroll reveal (IntersectionObserver), animated counters, active-section navigation, header hide on scroll, reading progress bar, mobile navigation, contact form (mailto fallback) |
-| `assets/` | Founder photographs |
+| `assets/` | Founder photographs, social share image, touch icons |
+| `assets/fonts/`, `fonts.css` | Self-hosted fonts (latin subset, SIL Open Font License); no requests to Google |
+| `imprint.html`, `privacy.html` | Legal notice and GDPR privacy policy (contain placeholders) |
+| `404.html` | Not-found page for GitHub Pages |
+| `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.nojekyll` | Search, device and hosting metadata |
 
-No build step or dependencies. Fonts are loaded from Google Fonts; everything else is self-contained and runs on any static host, including GitHub Pages.
+No build step or dependencies. Everything, fonts included, is self-contained and runs on any static host, including GitHub Pages. The site sets no cookies and loads no third-party resources.
 
 ## Motion
 
@@ -54,11 +58,24 @@ python3 -m http.server 8000
 
 Any static host (Netlify, Vercel, Cloudflare Pages) works by pointing it at the repository root.
 
-## Items to adjust before launch
+## Placeholders to fill before launch
 
-- **Company name**: "Proxima Urban" is a working name. It appears in `index.html` (title, header, hero, footer) and in `README.md`.
-- **Contact email**: `contact@proximaurban.eu` appears in `index.html` (contact section, form action) and in `script.js`.
-- **Founder biographies**: the Team section. Written from the public profiles at ICS-ULisboa and the Institute of Landscape Architecture, Leibniz Universität Hannover; confirm wording with both founders. Photos are in `assets/` (joint photo plus two square crops generated from it); replace with individual portraits if preferred.
-- **Offices and languages**: contact section.
-- **Contact form**: currently composes an email via `mailto:`. Replace the handler in `script.js` with a form service endpoint (Formspree, Netlify Forms, or a municipal-grade alternative) for production use.
-- **One Health City framework**: the framework and index belong to the Institute of Landscape Architecture, Leibniz Universität Hannover. Confirm commercial use and attribution wording with the institute before launch. The page presents it as an assessment, not a certification.
+Placeholders are shown in `[square brackets]` with a dashed blue outline (class `ph`). Search the HTML for `class="ph"` and `data-placeholder`. Once all are filled, delete the `.ph` rule in `styles.css`.
+
+| Item | Where |
+| --- | --- |
+| Company legal name and legal form, registered address | Footer (all pages), `imprint.html`, `privacy.html` |
+| VAT number, register court and number | Footer, `imprint.html` |
+| Telephone | Footer, `imprint.html` (also the `tel:` link) |
+| Function of representatives, person responsible for content | `imprint.html` |
+| Photographer credit | `imprint.html` |
+| Data transfer basis, retention period, supervisory authority | `privacy.html` |
+| LinkedIn, Instagram, ResearchGate, YouTube URLs | Footer links with `data-placeholder` (all pages); remove any channel not used |
+| Contact email `contact@proximaurban.eu` | Contact section, footer, legal pages, `script.js`, JSON-LD in `index.html` |
+| Site URL `https://chrixco.github.io/urban-consulting/` | Canonical and Open Graph tags, `robots.txt`, `sitemap.xml`; update when a custom domain is used. `404.html` uses `<base href="/urban-consulting/">`; change to `/` on a custom domain |
+
+The imprint and privacy texts are templates. Have them reviewed for the jurisdiction of the company's registered seat.
+
+## Responsiveness
+
+Tested with Playwright on 320 px phones, iPhone SE, iPhone 13 (portrait and landscape), Pixel 7, iPad Mini, iPad Pro 11 (landscape), 1280, 1920 and 2560 px screens: no horizontal overflow, no clipped elements, no failed requests. Content is centred at a maximum width of 1440 px on wide screens, hover effects are disabled on touch devices, and safe-area insets are respected on notched phones.

@@ -26,7 +26,7 @@
   function onScroll() {
     var y = window.scrollY;
     if (header) {
-      if (y > lastY && y > 120 && !nav.classList.contains("is-open")) header.classList.add("is-hidden");
+      if (y > lastY && y > 120 && !(nav && nav.classList.contains("is-open"))) header.classList.add("is-hidden");
       else header.classList.remove("is-hidden");
     }
     if (bar) {
@@ -97,6 +97,11 @@
     }, { rootMargin: "-40% 0px -55% 0px" });
     sections.forEach(function (s) { sio.observe(s); });
   }
+
+  // Social links not yet configured: keep the page in place.
+  document.querySelectorAll('a[data-placeholder]').forEach(function (a) {
+    if (a.getAttribute("href") === "#") a.addEventListener("click", function (e) { e.preventDefault(); });
+  });
 
   // Contact form: compose a mailto message so the page works without a backend.
   var form = document.getElementById("contact-form");
