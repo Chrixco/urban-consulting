@@ -78,6 +78,17 @@ Placeholders are shown in `[square brackets]` with a dashed blue outline (class 
 
 The imprint and privacy texts are templates. Have them reviewed for the jurisdiction of the company's registered seat.
 
+## Editorial style
+
+Page copy follows the terminology and argument of Marques and Alvim, *From Global Goals to Periphery Realities: SDG 11, Metropolitan Fringes, and the Resilience Gap in São Paulo Metropolitan Region, Brazil* (preprint, Research Square, 2026, doi:10.21203/rs.3.rs-8467644/v1).
+
+- **Implementation gap.** Not a lack of plans, but misalignment across governance scales and the translation, or neutralisation, of commitments in zoning categories, regulatory rules and institutional routines.
+- **Planning disjunctions.** Situations in which commitments expressed in plans are weakened or contradicted by regulatory categories, institutional routines or spatial decisions.
+- **Resilience as transformation.** Not incremental risk management: change in land-use regimes, rules and incentives, and in governance relations across scales.
+- **Analytical framework.** Four dimensions: governance, ecological, urban, socioeconomic.
+- **Method terms.** Triangulation of document analysis, spatial evidence and interviews; harmonised zoning mosaic; plan alignment audit; verifiable territorial outcomes (e.g. annual change in ecological connectivity, share of permits issued in low-risk areas).
+- **Voice.** Direct, declarative sentences; concepts defined on first use ("understood as"); no promotional adjectives; claims tied to instruments, scales and outcomes.
+
 ## Charts and proportions
 
 - **Scenario explorer.** Plots IPCC AR6 WGI medians and ranges for SSP1-2.6, SSP2-4.5 and SSP5-8.5: sea-level rise (likely range, relative to 1995–2014) and warming (very likely range, relative to 1850–1900). The selected scenario is shown in the accent colour with its range band; the others stay grey with direct labels. Controls, hover, keyboard (arrow keys) and a data table give the same values.
