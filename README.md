@@ -1,10 +1,10 @@
 # Proxima Urban — company website
 
-Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines supported by a scenario analysis service:
+Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines supported by a scenario exploration service:
 
 1. **One Health City assessment**: proximity, exposure and biodiversity indicators, based on the One Health City framework developed at the Institute of Landscape Architecture, Leibniz Universität Hannover. Includes 15-minute and 300 m green space benchmarks.
 2. **Climate resilience and nature-based solutions planning**: multi-scalar resilience strategy, planning instrument review and nature-based solutions with cost–benefit comparison.
-3. **Scenario analysis**: explorative climate, land use and population scenarios, spatial exposure modelling and adaptation pathways. A required step of resilience planning, applied to One Health City assessments, and available on its own.
+3. **Scenario exploration**: explorative climate, land use and population scenarios, spatial exposure modelling and adaptation pathways. A required step of resilience planning, applied to One Health City assessments, and available on its own.
 
 ## Page structure
 
@@ -18,6 +18,7 @@ All economic and health figures on the page link to their published source. Upda
 | --- | --- |
 | `index.html` | Single-page site: hero, mandate, service lines, OHC certification structure, approach, reference frameworks, founders, contact |
 | `styles.css` | Neo-brutalist design system: 2 px rules, rounded corners (radius scale), hard offset shadows, Space Grotesk display type, IBM Plex Mono labels, single neon blue accent; light and dark schemes; responsive breakpoints; all CSS animations |
+| `charts.js` | Interactive charts in plain SVG, no libraries: scenario explorer (IPCC AR6 sea level and warming), adaptation pathways, Copenhagen comparison, hero tooltips. Data and sources are at the top of the file |
 | `script.js` | Scroll reveal (IntersectionObserver), animated counters, active-section navigation, header hide on scroll, reading progress bar, mobile navigation, contact form (mailto fallback) |
 | `assets/` | Founder photographs, social share image, touch icons |
 | `assets/fonts/`, `fonts.css` | Self-hosted fonts (latin subset, SIL Open Font License); no requests to Google |
@@ -76,6 +77,13 @@ Placeholders are shown in `[square brackets]` with a dashed blue outline (class 
 | Site URL `https://chrixco.github.io/urban-consulting/` | Canonical and Open Graph tags, `robots.txt`, `sitemap.xml`; update when a custom domain is used. `404.html` uses `<base href="/urban-consulting/">`; change to `/` on a custom domain |
 
 The imprint and privacy texts are templates. Have them reviewed for the jurisdiction of the company's registered seat.
+
+## Charts and proportions
+
+- **Scenario explorer.** Plots IPCC AR6 WGI medians and ranges for SSP1-2.6, SSP2-4.5 and SSP5-8.5: sea-level rise (likely range, relative to 1995–2014) and warming (very likely range, relative to 1850–1900). The selected scenario is shown in the accent colour with its range band; the others stay grey with direct labels. Controls, hover, keyboard (arrow keys) and a data table give the same values.
+- **Adaptation pathways.** Illustrative measures and tipping points, after Haasnoot et al. (2013). Replace `MEASURES` and `TRANSFERS` in `charts.js` with values from a real study.
+- **Colour.** One accent only. Chart blue is `#1f51ff` in light mode and `#6585ff` in dark mode; both pass contrast and lightness checks against the chart surfaces.
+- **Golden ratio (φ ≈ 1.618).** Used for the main two-column layouts (hero, mandate, value, scenario readout, wide service card, contact, footer), the founders photo, and chart proportions (width : height = φ).
 
 ## Responsiveness
 
