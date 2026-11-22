@@ -1,9 +1,10 @@
 # Proxima Urban — company website
 
-Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines:
+Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines supported by a scenario analysis service:
 
 1. **One Health City assessment**: proximity, exposure and biodiversity indicators, based on the One Health City framework developed at the Institute of Landscape Architecture, Leibniz Universität Hannover. Includes 15-minute and 300 m green space benchmarks.
 2. **Climate resilience and nature-based solutions planning**: multi-scalar resilience strategy, planning instrument review and nature-based solutions with cost–benefit comparison.
+3. **Scenario analysis**: explorative climate, land use and population scenarios, spatial exposure modelling and adaptation pathways. A required step of resilience planning, applied to One Health City assessments, and available on its own.
 
 ## Page structure
 
