@@ -34,7 +34,7 @@ Any static host (Netlify, Vercel, Cloudflare Pages) works by pointing it at the 
 
 - **Company name**: "Proxima Urban" is a working name. It appears in `index.html` (title, header, hero, footer) and in `README.md`.
 - **Contact email**: `contact@proximaurban.eu` appears in `index.html` (contact section, form action) and in `script.js`.
-- **Founder biographies**: the Team section. Portrait images can replace the initials badges (`.person-initials`).
+- **Founder biographies**: the Team section. Written from the public profiles at ICS-ULisboa and the Institute of Landscape Architecture, Leibniz Universität Hannover; confirm wording with both founders. Portrait images can replace the initials badges (`.person-initials`).
 - **Offices and languages**: contact section.
 - **Contact form**: currently composes an email via `mailto:`. Replace the handler in `script.js` with a form service endpoint (Formspree, Netlify Forms, or a municipal-grade alternative) for production use.
 - **One Health City certification**: the five domains and three levels are a proposed structure for the firm's own framework. Review thresholds and verification procedures before publication.
