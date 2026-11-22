@@ -1,11 +1,22 @@
 # Proxima Urban — company website
 
-Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines supported by a scenario exploration service:
+Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through four services: two assessments, scenario exploration and implementation support:
 
 1. **One Health City assessment**: human affordance, non-human affordance and spatial exposure indicators, based on the One Health City framework developed at the Institute of Landscape Architecture, Leibniz Universität Hannover. Includes 15-minute and 300 m green space benchmarks.
-2. **Climate resilience and nature-based solutions planning**: multi-scalar resilience strategy, planning instrument review and nature-based solutions with cost–benefit comparison.
+2. **Urban resilience and nature-based solutions** (assessment): plan alignment audit, planning disjunctions, green–blue infrastructure as a continuous network and resilience strategy, based on the urban resilience framework.
 3. **Scenario exploration**: explorative climate, land use and population scenarios, spatial exposure modelling and adaptation pathways. A required step of resilience planning, applied to One Health City assessments, and available on its own.
-4. **Implementation support**: top-down instruments balanced with bottom-up, community-driven processes and multi-actor workshops. Available only after a completed One Health City or climate resilience assessment.
+4. **Implementation support**: top-down instruments balanced with bottom-up, community-driven processes and multi-actor workshops. Available only after a completed One Health City or urban resilience assessment.
+
+## Service naming
+
+Use these names everywhere (hero, cards, overview, contact form, footer, metadata):
+
+| No. | Name | Type | Prerequisite |
+| --- | --- | --- | --- |
+| 01 | One Health City assessment | Assessment | None |
+| 02 | Urban resilience and nature-based solutions | Assessment | None |
+| 03 | Scenario exploration | Foresight | None; integral to 02 |
+| 04 | Implementation support | Follow-up | Completed assessment 01 or 02 |
 
 ## Page structure
 
@@ -17,7 +28,7 @@ All economic and health figures on the page link to their published source. Upda
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Single-page site: hero, mandate, service lines, OHC certification structure, approach, reference frameworks, founders, contact |
+| `index.html` | Single-page site: hero, cost-of-inaction figures, mandate, services at a glance and service cards, scenario exploration, value for the city, One Health City and urban resilience frameworks, approach, reference frameworks, founders, why us, contact |
 | `styles.css` | Neo-brutalist design system: 2 px rules, rounded corners (radius scale), hard offset shadows, Space Grotesk display type, IBM Plex Mono labels, single neon blue accent; light and dark schemes; responsive breakpoints; all CSS animations |
 | `charts.js` | Interactive charts in plain SVG, no libraries: scenario explorer (IPCC AR6 sea level and warming), adaptation pathways, Copenhagen comparison, hero tooltips. Data and sources are at the top of the file |
 | `script.js` | Scroll reveal (IntersectionObserver), animated counters, active-section navigation, header hide on scroll, reading progress bar, mobile navigation, contact form (mailto fallback) |

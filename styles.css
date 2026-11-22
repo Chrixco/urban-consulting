@@ -320,6 +320,22 @@ p:last-child { margin-bottom: 0; }
   .service-card-featured::after { position: static; display: inline-block; margin-bottom: 1rem; width: auto; max-width: 100%; align-self: flex-start; line-height: 1.4; order: -1; }
 }
 
+/* Services at a glance */
+.offer-grid { list-style: none; margin: 0 0 clamp(2rem, 4vw, 3rem); padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--bw); background: var(--line); border: var(--bw) solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.offer { background: var(--paper); }
+.offer-link { display: flex; flex-direction: column; gap: .75rem; height: 100%; padding: var(--pad-card); color: inherit; transition: background .25s, color .25s; }
+.offer-link:hover, .offer-link:focus-visible { background: var(--accent); color: var(--accent-ink); --ink-2: rgba(255, 255, 255, 0.82); text-decoration: none; }
+.offer-top { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.offer-num { font-family: var(--font-display); font-weight: 700; font-size: 2rem; line-height: 1; letter-spacing: -0.04em; }
+.offer-kind { padding: .2rem .6rem; border: 1px solid currentColor; border-radius: var(--radius-pill); text-transform: none; letter-spacing: 0; font-size: .72rem; }
+.offer-follow .offer-kind { border-style: dashed; }
+.offer-name { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; line-height: 1.2; min-height: 2.4em; }
+.offer-row { display: block; font-size: .9rem; line-height: 1.4; padding-top: .55rem; border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); }
+.offer-row .mono { display: block; margin-bottom: .15rem; color: var(--ink-2); text-transform: none; letter-spacing: 0; font-size: .72rem; }
+@media (max-width: 1100px) { .offer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .offer-grid { grid-template-columns: minmax(0, 1fr); } .offer-name { min-height: 0; } }
+@media (hover: none) { .offer-link:hover { background: none; color: inherit; --ink-2: inherit; } }
+
 /* OHC */
 .ohc-list { list-style: none; margin: 0 0 3rem; padding: 0; border-top: var(--bw) solid var(--line); }
 .ohc-domain { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.5rem; padding: 1.5rem 0; border-bottom: var(--bw) solid var(--line); align-items: start; transition: padding-left .3s var(--ease); }
