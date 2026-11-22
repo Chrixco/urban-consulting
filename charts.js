@@ -376,6 +376,96 @@
     });
   }
 
+
+  /* ---------- urban resilience framework matrix ----------
+   * Lêdo Marques (2024), Table 17: analytical framework integrating resilience
+   * factors (rows) and urban dimensions (columns). Empty cells are empty in the source.
+   */
+  var RF_DIMS = ["Governance", "Ecological", "Urban", "Socioeconomic"];
+  var RF = [
+    { f: "Diversity and redundancy", c: {
+      Ecological: ["Land use diversity", "Food diversity", "Green infrastructure diversity"],
+      Urban: ["Diversity of land use", "Diversity of energy sources (renewable)", "Diversity of mobility modes favouring active mode"],
+      Socioeconomic: ["Business diversity", "Social cohesion"],
+      Governance: ["Diversity of institutional settings for planning and participation", "Mobilising different types of knowledge and actors"] } },
+    { f: "Managing connectivity and modularity", c: {
+      Ecological: ["Ecological connectivity (green corridors, parks, green spaces)"],
+      Urban: ["Urban connectivity (prioritise pedestrians, active mobility and public transport)", "Density", "Mixed uses", "Proximity to services"],
+      Socioeconomic: ["Polycentric economic development based on local potentialities and sustainability"],
+      Governance: ["Coordination and support", "Strategic planning with a multiscalar perspective", "Polycentric governance"] } },
+    { f: "Flexibility and innovation", c: {
+      Ecological: ["Foster innovation", "Professional training (education)"],
+      Urban: ["Pilot projects (testing)"],
+      Socioeconomic: ["Foster innovation"],
+      Governance: ["Participation of multiple stakeholders", "Incremental process", "Monitoring"] } },
+    { f: "Circularity and climate neutrality", c: {
+      Ecological: ["Restoring and maintaining the water cycle", "Food and biomass production"],
+      Urban: ["Water, waste and energy", "Mobility", "Circular construction practices", "Self-sufficient buildings", "Re-development and adaptation"],
+      Socioeconomic: ["Circular, low-carbon economy"],
+      Governance: [] } },
+    { f: "Culture", c: {
+      Ecological: ["Integration of ecological and historical heritage"],
+      Urban: ["Enhancing the value of existing heritage", "Re-development"],
+      Socioeconomic: ["Foster creative industries"],
+      Governance: ["Coordination", "Technical support", "Financial support", "Participation", "Awareness"] } },
+    { f: "Equity", c: {
+      Ecological: ["Equitable distribution of and access to ecological infrastructure"],
+      Urban: ["Housing", "Equitable distribution of and access to facilities and services"],
+      Socioeconomic: ["Professional training (education)", "Employment opportunities"],
+      Governance: [] } },
+    { f: "Risk management", c: {
+      Ecological: ["Nature-based solutions (green and blue infrastructure)"],
+      Urban: ["Infrastructure (e.g. flooding)", "Housing", "Climate shelters"],
+      Socioeconomic: ["Participation", "Awareness and education"],
+      Governance: [] } }
+  ];
+  function buildMatrix(host) {
+    var max = 0;
+    RF.forEach(function (r) { RF_DIMS.forEach(function (d) { max = Math.max(max, r.c[d].length); }); });
+    var tbl = document.createElement("table"); tbl.className = "rf-table";
+    var cap = document.createElement("caption"); cap.className = "sr-only";
+    cap.textContent = "Resilience factors by urban dimension, after Lêdo Marques (2024), Table 17. Each cell lists the number of planning elements; select a cell for the list.";
+    tbl.appendChild(cap);
+    var thead = document.createElement("thead"), hr = document.createElement("tr");
+    var th0 = document.createElement("th"); th0.scope = "col"; th0.textContent = "Factor"; hr.appendChild(th0);
+    RF_DIMS.forEach(function (d) { var th = document.createElement("th"); th.scope = "col"; var full = document.createElement("span"); full.className = "rf-full"; full.textContent = d; var ab = document.createElement("span"); ab.className = "rf-abbr"; ab.setAttribute("aria-hidden", "true"); ab.textContent = d.charAt(0); th.appendChild(full); th.appendChild(ab); hr.appendChild(th); });
+    thead.appendChild(hr); tbl.appendChild(thead);
+    var tb = document.createElement("tbody"), buttons = [];
+    var dimEl = document.getElementById("rf-detail-dim"), facEl = document.getElementById("rf-detail-factor"), list = document.getElementById("rf-detail-items");
+    function select(btn, r, d) {
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+      if (dimEl) dimEl.textContent = d + " dimension";
+      if (facEl) facEl.textContent = r.f;
+      if (list) {
+        list.textContent = "";
+        var items = r.c[d];
+        if (!items.length) { var li = document.createElement("li"); li.className = "rf-empty"; li.textContent = "No elements assigned in the source framework."; list.appendChild(li); }
+        items.forEach(function (it) { var li = document.createElement("li"); li.textContent = it; list.appendChild(li); });
+      }
+    }
+    var initial = null;
+    RF.forEach(function (r, ri) {
+      var tr = document.createElement("tr");
+      var th = document.createElement("th"); th.scope = "row"; th.textContent = r.f; tr.appendChild(th);
+      RF_DIMS.forEach(function (d) {
+        var td = document.createElement("td"), n = r.c[d].length;
+        var b = document.createElement("button"); b.type = "button"; b.className = "rf-cell" + (n ? "" : " is-empty");
+        b.style.setProperty("--w", n ? (0.14 + 0.86 * n / max).toFixed(3) : 0);
+        b.setAttribute("aria-pressed", "false");
+        b.setAttribute("aria-label", r.f + ", " + d + ": " + (n ? n + " element" + (n > 1 ? "s" : "") : "no elements"));
+        b.textContent = n ? String(n) : "–";
+        b.addEventListener("click", function () { select(b, r, d); });
+        b.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") select(b, r, d); });
+        b.addEventListener("focus", function () { select(b, r, d); });
+        buttons.push(b); td.appendChild(b); tr.appendChild(td);
+        if (ri === 1 && d === "Urban") initial = [b, r, d];
+      });
+      tb.appendChild(tr);
+    });
+    tbl.appendChild(tb); host.appendChild(tbl);
+    if (initial) select(initial[0], initial[1], initial[2]);
+  }
+
   function init() {
     document.querySelectorAll("[data-chart]").forEach(function (host) {
       var k = host.getAttribute("data-chart");
@@ -386,6 +476,7 @@
     bindControls();
     buildTable();
     bindStaticTips();
+    document.querySelectorAll("[data-matrix]").forEach(buildMatrix);
     redraw();
     var t;
     var ro = "ResizeObserver" in window ? new ResizeObserver(function () { clearTimeout(t); t = setTimeout(redraw, 80); }) : null;

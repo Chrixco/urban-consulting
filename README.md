@@ -2,13 +2,14 @@
 
 Static website for an urban consulting practice advising municipalities, metropolitan authorities and regional governments through two service lines supported by a scenario exploration service:
 
-1. **One Health City assessment**: proximity, exposure and biodiversity indicators, based on the One Health City framework developed at the Institute of Landscape Architecture, Leibniz Universität Hannover. Includes 15-minute and 300 m green space benchmarks.
+1. **One Health City assessment**: human affordance, non-human affordance and spatial exposure indicators, based on the One Health City framework developed at the Institute of Landscape Architecture, Leibniz Universität Hannover. Includes 15-minute and 300 m green space benchmarks.
 2. **Climate resilience and nature-based solutions planning**: multi-scalar resilience strategy, planning instrument review and nature-based solutions with cost–benefit comparison.
 3. **Scenario exploration**: explorative climate, land use and population scenarios, spatial exposure modelling and adaptation pathways. A required step of resilience planning, applied to One Health City assessments, and available on its own.
+4. **Implementation support**: top-down instruments balanced with bottom-up, community-driven processes and multi-actor workshops. Available only after a completed One Health City or climate resilience assessment.
 
 ## Page structure
 
-Hero · cost-of-inaction figures · mandate · 01 service lines · 02 value for the city (sourced economic evidence, Copenhagen case, savings mechanisms) · 03 One Health City framework · 04 approach · 05 reference frameworks · 06 founders · 07 why contact us · 08 contact.
+Hero · cost-of-inaction figures · mandate · 01 services · 02 scenario exploration · 03 value for the city · 04 One Health City framework · 05 urban resilience framework · 06 approach · 07 reference frameworks · 08 founders · 09 why contact us · 10 contact.
 
 All economic and health figures on the page link to their published source. Update them if newer editions are released.
 
@@ -77,6 +78,20 @@ Placeholders are shown in `[square brackets]` with a dashed blue outline (class 
 | Site URL `https://chrixco.github.io/urban-consulting/` | Canonical and Open Graph tags, `robots.txt`, `sitemap.xml`; update when a custom domain is used. `404.html` uses `<base href="/urban-consulting/">`; change to `/` on a custom domain |
 
 The imprint and privacy texts are templates. Have them reviewed for the jurisdiction of the company's registered seat.
+
+## Urban resilience framework
+
+Section 05 presents the firm's urban resilience framework, built from the founders' doctoral work. All elements are taken from the sources; nothing is added.
+
+- **Definition.** Resilience as the capacity of urban systems to adapt, reorganise and transform in response to socio-environmental dynamics (Corral Burau 2025, conclusion).
+- **Four dimensions** with definitions (Lêdo Marques 2024, Table 16): governance, ecological, urban, socioeconomic.
+- **Seven resilience factors** and the factor-by-dimension matrix (Lêdo Marques 2024, Table 17), shown as an interactive grid in `charts.js` (`RF`). Empty governance cells are empty in the source.
+- **Three system layers**: ecosystem, infrastructural, human activity (Corral Burau 2025, after Corral 2024).
+- **Four planning scales**: metropolitan, intermediate, municipal, local (Lêdo Marques 2024).
+- **Four application stages**: risk projection, territorial and plan analysis, scenario exploration, reflection and pathways (adapted from the four stages in Corral Burau 2025 and the plan analysis in Lêdo Marques 2024).
+- **Principle**: top-down infrastructure provision balanced with bottom-up, community-driven co-production (Corral Burau 2025).
+
+Sources: Lêdo Marques, A. (2024), doi:10.15488/16756; Corral Burau, C. X. (2025), https://repo.uni-hannover.de/handle/123456789/19501. Both Leibniz Universität Hannover.
 
 ## Editorial style
 
